@@ -5,13 +5,13 @@
  */
 
 /**
- * @type {import('gatsby').GatsbyConfig}
+ * @type {import("gatsby").GatsbyConfig}
  */
 module.exports = {
   siteMetadata: {
-    title: `Презентация для защиты ИПР`,
+    title: `Презентация GitHub Actions`,
     description: ``,
-    author: `Алексей Дудко`,
+    author: `Алексей Дудко`
   },
   trailingSlash: "never",
   plugins: [
@@ -27,8 +27,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/src/content`,
-      },
+        path: `${__dirname}/src/content`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -46,20 +46,25 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 960,
-              quality: 68,
-            },
+              quality: 68
+            }
           },
           `gatsby-remark-copy-linked-files`,
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               className: `autolink`,
-              elements: [`h1`, `h2`],
-            },
+              elements: [`h1`, `h2`]
+            }
           },
-          `gatsby-remark-prismjs`,
-        ],
-      },
-    },
-  ],
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-"
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
