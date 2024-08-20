@@ -3,13 +3,13 @@ import * as React from "react"
 import Layout from "../components/layout"
 
 const IndexPage = () => (
-  <Layout pageTitle={"Нагрузочное тестирование с JMeter"}></Layout>
+  <Layout pageTitle={"Git and GitHub"}></Layout>
 )
 
 export const Head = () => (
   <>
-    <title>Нагрузочное тестирование с JMeter</title>
-    <meta name="description" content="Hello World" />
+    <title>Git и GitHub</title>
+    <meta name="description" content="Git и GitHub" />
   </>
 )
 

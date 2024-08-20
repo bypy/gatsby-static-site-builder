@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
       <div className={row}>
         <div className={menuWrapper}>
           <div className={cn(menu)}>
-            <Header pageTitle={`Тестирование производительности`} />
+            <Header pageTitle={`Git и GitHub`} />
             <Nav />
           </div>
         </div>
