@@ -1,8 +1,9 @@
 import * as React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import slugify from "slugify"
 import { default as cn } from "classnames"
 
+import { pathPrefix } from "../../gatsby-config"
 import { tocH1, tocH2 } from "./nav.module.css"
 
 const Nav = () => {
@@ -37,7 +38,7 @@ const Nav = () => {
   const links = data.markdown.edges.map(({ node }) => {
     const headings = sortHeadings(node.headings)
     const href = `${node.fields.slug}${slugify(headings.h1.id, {
-      lower: true,
+      lower: true
     })}`
     const navItem = (
       <li key={headings.h1.id}>
@@ -48,7 +49,7 @@ const Nav = () => {
           <ul className={cn(tocH2)}>
             {headings.h2.map(h2 => (
               <li key={h2.id}>
-                <a href={`${href}#${encodeURIComponent(h2.id)}`}>{h2.value}</a>
+                <a href={`${pathPrefix || ""}${href}#${encodeURIComponent(h2.id)}`}>{h2.value}</a>
               </li>
             ))}
           </ul>
@@ -65,7 +66,7 @@ const Nav = () => {
 function sortHeadings(headings) {
   const results = {
     h1: null,
-    h2: [],
+    h2: []
   }
   headings.forEach(({ depth, id, value }) => {
     if (depth === 1 && !results.h1) {
