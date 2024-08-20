@@ -49,7 +49,7 @@ const Nav = () => {
           <ul className={cn(tocH2)}>
             {headings.h2.map(h2 => (
               <li key={h2.id}>
-                <a href={`${pathPrefix || ""}${href}#${encodeURIComponent(h2.id)}`}>{h2.value}</a>
+                <a href={`${pathPrefix || ""}${pathPrefix ? href.slice(1) : href}#${encodeURIComponent(h2.id)}`}>{h2.value}</a>
               </li>
             ))}
           </ul>
