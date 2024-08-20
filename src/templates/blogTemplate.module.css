@@ -1,0 +1,18 @@
+.blogPostContainer {
+  max-width: var(--size-content);
+  margin: auto;
+}
+
+.blogPostContent {
+  font-family: inherit;
+
+  h1,
+  h2,
+  h3 {
+    scroll-margin-top: 1rem;
+  }
+
+  h2:target {
+    color: #d80957;
+  }
+}

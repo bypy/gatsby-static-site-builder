@@ -1,0 +1,32 @@
+.tocH1,
+.tocH2 {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    text-decoration-color: currentColor;
+  }
+
+  a:hover,
+  a:visited,
+  a:active {
+    color: inherit;
+  }
+}
+
+.tocH1 {
+  list-style-type: upper-roman;
+}
+
+.tocH2 {
+  list-style-type: circle;
+
+  li:hover {
+    list-style-type: disc;
+  }
+}
